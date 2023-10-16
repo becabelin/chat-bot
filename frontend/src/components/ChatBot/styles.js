@@ -4,12 +4,15 @@ export const ChatContainer = styled.div`
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 300px;
+  width: 350px;
+  height: 350px;
   border: 1px solid #007bff;
   border-radius: 10px;
   background-color: #f7f7f7;
   display: flex;
   flex-direction: column;
+ 
+  overflow-y: scroll;
 `;
 
 export const MessageContainer = styled.div`
