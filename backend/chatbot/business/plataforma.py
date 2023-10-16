@@ -83,3 +83,24 @@ def obterTempo():
     pergunta.respostas.add(resposta2)
 
     return pergunta
+
+def obterAdicionais():
+    pergunta = Pergunta()
+    pergunta.titulo = 'Quais recursos adicionais a plataforma oferece para promover um estilo de vida saudável?'
+
+    resposta1 = Resposta()
+    resposta1.valor = '1'
+    resposta1.descricao = 'Em breve lançaremos novos recursos em nossa plataforma, dentre elas, uma ferramenta para agendamento de consulta com personal trainer e nutricionista por videochamada.'
+
+    resposta2 = Resposta()
+    resposta2.valor = '2'
+    resposta2.descricao = 'Caso queira voltar ao menu principal, digite 2.'
+    resposta2.acao = '/api/v1/chatbot/principal'
+
+    pergunta.save()
+    resposta1.save()
+    resposta2.save()
+    pergunta.respostas.add(resposta1)
+    pergunta.respostas.add(resposta2)
+
+    return pergunta

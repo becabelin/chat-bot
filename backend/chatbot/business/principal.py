@@ -86,6 +86,8 @@ def obterMenuSuporte():
     resposta1.save()
     pergunta.respostas.add(resposta1)
 
+    return pergunta
+
 
 def obterMenuCancelamento():
     pergunta = Pergunta()
@@ -99,3 +101,5 @@ def obterMenuCancelamento():
     pergunta.save()
     resposta1.save()
     pergunta.respostas.add(resposta1)
+
+    return pergunta

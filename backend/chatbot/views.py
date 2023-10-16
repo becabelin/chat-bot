@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view
 from .serializers import PerguntaSerializer
 from django.http.response import JsonResponse
-from .business import principal, plataforma
+from .business import principal, plataforma, suporte, cancelamento
 
 @api_view(['GET'])
 def obterMenuPrincipal(request):
@@ -49,5 +49,23 @@ def obterPlataformaVideos(request):
 @api_view(['GET'])
 def obterPlataformaTempo(request):
     perguntaPrincipal = plataforma.obterTempo()
+    perguntaPrincipalSerializer = PerguntaSerializer(perguntaPrincipal)
+    return JsonResponse(perguntaPrincipalSerializer.data)
+
+@api_view(['GET'])
+def obterPlataformaAdicionais(request):
+    perguntaPrincipal = plataforma.obterAdicionais()
+    perguntaPrincipalSerializer = PerguntaSerializer(perguntaPrincipal)
+    return JsonResponse(perguntaPrincipalSerializer.data)
+
+@api_view(['GET'])
+def obterSuporteProblemas(request):
+    perguntaPrincipal = suporte.obterSuporteProblemas()
+    perguntaPrincipalSerializer = PerguntaSerializer(perguntaPrincipal)
+    return JsonResponse(perguntaPrincipalSerializer.data)
+
+@api_view(['GET'])
+def obterCancelamentoPolitica(request):
+    perguntaPrincipal = cancelamento.obterCancelamentoPolitica()
     perguntaPrincipalSerializer = PerguntaSerializer(perguntaPrincipal)
     return JsonResponse(perguntaPrincipalSerializer.data)
