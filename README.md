@@ -21,7 +21,7 @@ This project was developed using the following technologies:
 Clone the project and access the folder
 
 ```bash
-$ git clone https://github.com/victortxc/chat-bot.git && cd chat-bot
+$ git clone https://github.com/becabelin/chat-bot.git && cd chat-bot
 ```
 
 Follow the steps below
